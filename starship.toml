@@ -1,0 +1,49 @@
+format = """
+[](fg:#608021)\
+$directory\
+
+$git_branch\
+$git_status\
+[ ](fg:#86BBD8)\
+
+
+"""
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+
+
+
+[directory]
+style = "fg:#2f7c76"
+format = "[ $path ]($style)"
+truncation_length = 3
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = " 󰈙 "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important 󰈙 " = " 󰈙 "
+
+
+
+[git_branch]
+symbol = ":"
+style = "fg:#d7392a"
+format = '[$symbol$branch]($style)'
+
+[git_status]
+style = "fg:#2a5fd7"
+format = '[$all_status$ahead_behind ]($style)'
+
+
